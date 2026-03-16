@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.slider {
+    height: 1e2vh;
+    position: relative;
+    overflow: hidden;
+    cursor: grab;
+}
+
+.slider:active {
+    cursor: grabbing;
+}
+
+.slider .big {
+    display: flex;
+    height: 100%;
+    width: 500%;
+    position: relative;
+    left: 0;
+}
+
+.slider .big .item {
+    width: 100%;
+    height: 100%;
+}
+
+.slider .big .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.slider .btn {
+    position: absolute;
+    top: 50%;
+    font-size: 4rem;
+    cursor: pointer;
+    padding: 0 30px 5px 30px;
+    background: rgb(8, 244, 90);
+    border-radius: 20%;
+    box-shadow: 0 0 14px rgb(31, 225, 131), 0 0 39px rgb(3, 228, 70), 0 0 90px rgb(114, 6, 239); 
+    border: 0;
+    translate: 0 -50%;
+    transition: .3s;
+    animation: btn 1s 5;
+}
+
+
+.slider .btn.prev {
+    left: 1.5%;
+    --pos: -20px;
+    color: #fff;
+}
+
+.slider .btn.next {
+    right: 1.5%;
+    --pos: 20px;
+    color: #fff;
+}
+
+
+.slider .btn:hover {
+    background: hsla(60, 100%, 55%, 0.824);
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 40px rgb(5, 220, 30), 0 0 59px rgb(18, 164, 59), 0 0 110px rgb(27, 11, 108); 
+
+}
+
+@keyframes btn {
+    50% {translate: var(--pos) -50%;}
+}
+
+.slider .radio {
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.slider .radio input {
+    width: 43px;
+    height: 23px;
+    cursor: pointer;
+    margin: 0 2px;
+    border-radius: 10px; 
+    background: green;
+    appearance: none; 
+    transition: .5s;
+}
+
+.slider .radio input:checked {
+    background: lemonchiffon;
+    box-shadow: inset 0 0 10px green;
+}
