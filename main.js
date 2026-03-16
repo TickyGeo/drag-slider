@@ -30,7 +30,7 @@ slider.onmousemove = e => {
         } else if (e.x > mouseX) {
             cur += 100;
         };
-        cur > 0 ? cur = (items.length - 1) * -100 : cur == items.length * -100? cur = 0 : '';
+        cur > 0 ? cur = (items.length - 1) * -100 : cur == items.length * -100 ? cur = 0 : '';
         bool = false;
         big.style.left = cur + '%';
         radio[cur / -100].checked = true;
